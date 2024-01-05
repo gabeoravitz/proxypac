@@ -4,7 +4,7 @@ function FindProxyForURL(url, host) {
     // Nutanix Internal via proxy
     if (isPlainHostName(host) || 
         shExpMatch(host, "*.nutanix.com") || 
-        isInNet(dnsResolve(host), "10.0.0.0", "255.0.0.0") || 
+        isInNet((host), "10.0.0.0", "255.0.0.0") || 
         return PROXY;
     }
     // Everything else directly!
