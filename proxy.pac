@@ -1,10 +1,10 @@
 function FindProxyForURL(url, host) {
     PROXY = "PROXY 192.168.1.43:8118"
 
-    // Apple.com via proxy
-    if (shExpMatch(host,"*.nutanix.com")) {
-        return PROXY;
-    if (shExpMatch(host,"10.*")) {
+    // Nutanix Internal via proxy
+    if (isPlainHostName(host) || 
+        shExpMatch(host, "*.nutanix.com") || 
+        isInNet(dnsResolve(host), "10.0.0.0", "255.0.0.0") || 
         return PROXY;
     }
     // Everything else directly!
