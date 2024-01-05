@@ -5,10 +5,10 @@ function FindProxyForURL(url, host) {
     if (isInNet(host, "10.0.0.0", "255.0.0.0")) {
         return PROXY;
     }
-    if (shExpMatch(host,"*corp.nutanix.com")) {
+    if (shExpMatch(host,"*.corp.nutanix.com")) {
         return PROXY;
     }
-    if (shExpMatch(host,"*eng.nutanix.com")) {
+    if (shExpMatch(host,"*.eng.nutanix.com")) {
         return PROXY;
     }
     // Everything else directly!
