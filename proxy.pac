@@ -4,6 +4,8 @@ function FindProxyForURL(url, host) {
     // Apple.com via proxy
     if (shExpMatch(host,"*.nutanix.com")) {
         return PROXY;
+    if (shExpMatch(host,"10.*")) {
+        return PROXY;
     }
     // Everything else directly!
     return "DIRECT";
