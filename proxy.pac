@@ -1,8 +1,8 @@
 function FindProxyForURL(url, host) {
-    PROXY = "PROXY 1.2.3.4"
+    PROXY = "PROXY 192.168.1.43:8118"
 
     // Apple.com via proxy
-    if (shExpMatch(host,"*.apple.com")) {
+    if (shExpMatch(host,"*.nutanix.com")) {
         return PROXY;
     }
     // Everything else directly!
